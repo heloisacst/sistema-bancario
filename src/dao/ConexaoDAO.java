@@ -1,14 +1,14 @@
-package connection;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conexao {
+public class ConexaoDAO {
 
         private Connection con;
 
-        public Conexao() {
+        public ConexaoDAO() {
 
             String user = "root"; //"postgres";
             String senha = "dev123"; //"udesc";

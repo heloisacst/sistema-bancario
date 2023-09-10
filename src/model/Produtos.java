@@ -1,4 +1,4 @@
-package entities;
+package model;
 
 public class Produtos {
     private Integer cod_produto;
@@ -30,7 +30,7 @@ public class Produtos {
         this.nome_produto = nome_produto;
     }
 
-    public void removerProduto(int cod_produto, String nome_produto) {
+    public void removerProduto(int cod_produto) {
         this.cod_produto = cod_produto;
         this.nome_produto = nome_produto;
     }
