@@ -5,9 +5,9 @@ import model.Produtos;
 import java.sql.*;
 import java.util.Scanner;
 
-public class ProdutosDAO {
+public class ProdutosDao {
     Scanner sc = new Scanner(System.in);
-    ConexaoDAO conexao = new ConexaoDAO();
+    ConexaoDao conexao = new ConexaoDao();
     Produtos produtos = new Produtos();
 
     public void administrarProdutos(){

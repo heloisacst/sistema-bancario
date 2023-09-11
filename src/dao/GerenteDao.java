@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class GerenteDAO {
+public class GerenteDao {
     Scanner sc = new Scanner(System.in);
-    ConexaoDAO conexao = new ConexaoDAO();
+    ConexaoDao conexao = new ConexaoDao();
     Gerente gerente = new Gerente();
 
     public void cadastrarGerente() {

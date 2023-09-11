@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConexaoDAO {
+public class ConexaoDao {
 
         private Connection con;
 
-        public ConexaoDAO() {
+        public ConexaoDao() {
 
             String user = "root"; //"postgres";
             String senha = "dev123"; //"udesc";
