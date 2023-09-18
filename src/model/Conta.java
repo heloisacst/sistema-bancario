@@ -1,22 +1,20 @@
 package model;
 
 import enums.TipoConta;
-
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class Conta {
     private Integer nro_conta;
     private Integer agencia;
     private TipoConta tipo_conta;
-    private Date data_abertura;
+    private LocalDateTime data_abertura;
     private Double saldo;
-
 
     public Conta(){
 
     }
 
-    public Conta(Integer nro_conta, Integer agencia, TipoConta tipo_conta, Date data_abertura, Double saldo) {
+    public Conta(Integer nro_conta, Integer agencia, TipoConta tipo_conta, LocalDateTime data_abertura, Double saldo) {
         this.nro_conta = nro_conta;
         this.agencia = agencia;
         this.tipo_conta = tipo_conta;
@@ -33,16 +31,14 @@ public class Conta {
     public TipoConta getTipo_conta() {
         return tipo_conta;
     }
-    public Date getData_abertura() {
+    public LocalDateTime getData_abertura() {
         return data_abertura;
     }
     public Double getSaldo() {
         return saldo;
     }
 
-
-
-    public void cadastrarConta(Integer nro_conta, Integer agencia, TipoConta tipo_conta, Date data_abertura, Double saldo) {
+    public void cadastrarConta(Integer nro_conta, Integer agencia, TipoConta tipo_conta, LocalDateTime data_abertura, Double saldo) {
         this.nro_conta = nro_conta;
         this.agencia = agencia;
         this.tipo_conta = tipo_conta;

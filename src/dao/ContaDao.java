@@ -6,7 +6,8 @@ import model.Conta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class ContaDao {
@@ -34,27 +35,33 @@ public class ContaDao {
         System.out.print("Tipo da Conta: ");
         sc.nextLine();
         TipoConta tipoConta = TipoConta.valueOf(sc.next());
+        LocalDateTime dataAbertura = LocalDateTime.now();
 
-        conta.cadastrarConta(nro_conta, 0001, tipoConta, new Date(), 0.0);
+        conta.cadastrarConta(nro_conta, 0001, tipoConta, dataAbertura, 0.0);
+        String tipoContaSql = tipoConta.toString();
+        Timestamp dataAberturaSql = Timestamp.valueOf(dataAbertura);
+
+        System.out.print("Informar o CPF que essa conta será vinculada: ");
+        int cpf_cliente = sc.nextInt();
 
         try (Connection connection = conexao.getConnection()) {
-            String sql = "INSERT INTO conta (nro_conta, agencia, tipo_conta, data_abertura, saldo) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO conta (nro_conta, agencia, tipo_conta, data_abertura, saldo, CPF_cliente) VALUES (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setInt(1, conta.getNro_conta());
             preparedStatement.setInt(2, conta.getAgencia());
-            preparedStatement.setObject(3, conta.getTipo_conta());
-            preparedStatement.setDate(4, conta.getData_abertura());
+            preparedStatement.setString(3, tipoContaSql);
+            preparedStatement.setTimestamp(4, dataAberturaSql);
             preparedStatement.setDouble(5, conta.getSaldo());
-
+            preparedStatement.setInt(6, cpf_cliente);
 
             int rowsAffected = preparedStatement.executeUpdate();
 
             if (rowsAffected > 0) {
-                System.out.println("Cliente cadastrado com sucesso!");
+                System.out.println("Conta cadastrada com sucesso!");
             } else {
-                System.out.println("Falha ao cadastrar o cliente.");
+                System.out.println("Falha ao cadastrar a conta.");
             }
         } catch (SQLException e) {
             e.printStackTrace();

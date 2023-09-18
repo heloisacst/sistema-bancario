@@ -1,0 +1,1 @@
+alter table conta add foreign key(CPF_cliente) references cliente(CPF)

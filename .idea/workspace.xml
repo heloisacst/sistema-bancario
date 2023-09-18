@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2986602-f29d-4480-97cd-4f0d323a3b03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ClienteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ConexaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConexaoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/GerenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/GerenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ProdutosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ProdutosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ContaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ContaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ProdutosDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/TipoConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/TipoConta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Produtos.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

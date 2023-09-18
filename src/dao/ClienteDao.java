@@ -30,7 +30,7 @@ public class ClienteDao {
     private void cadastrarCliente(){
         System.out.println("----CADASTRO DE CLIENTE----");
         System.out.print("Número do CPF: ");
-        Integer cpf = sc.nextInt();
+        long cpf = sc.nextInt();
         System.out.print("Nome completo: ");
         sc.nextLine();
         String nome = sc.nextLine();
@@ -47,7 +47,7 @@ public class ClienteDao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1, cliente.getCpf());
+            preparedStatement.setLong(1, cliente.getCpf());
             preparedStatement.setString(2, cliente.getNome());
             preparedStatement.setInt(3, cliente.getTelefone());
             preparedStatement.setString(4, cliente.getEmail());
