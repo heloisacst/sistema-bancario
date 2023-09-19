@@ -34,4 +34,13 @@ public class Transacao {
         this.valor_transacao = valor_transacao;
         this.tipoTransacao = tipoTransacao;
     }
+
+    @Override
+    public String toString() {
+        return "Transacao{" +
+                "data_hora=" + data_hora +
+                ", valor_transacao=" + valor_transacao +
+                ", tipoTransacao=" + tipoTransacao +
+                '}';
+    }
 }

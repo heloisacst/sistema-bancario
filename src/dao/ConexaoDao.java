@@ -16,7 +16,6 @@ public class ConexaoDao {
 
             try {
                 con = DriverManager.getConnection(url, user, senha);
-                System.out.println("Conexão bem-sucedida!");
             } catch (SQLException e) {
                 System.err.println("Erro na conexão: " + e.getMessage());
                 throw new RuntimeException("Erro na conexão com o banco de dados", e);

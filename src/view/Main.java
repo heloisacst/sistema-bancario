@@ -3,6 +3,7 @@ package view;
 import dao.ClienteDao;
 import dao.ContaDao;
 import dao.GerenteDao;
+import dao.TransacaoDao;
 
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class Main {
         System.out.println("(1)- Administrar Gerentes");
         System.out.println("(2)- Administrar Clientes");
         System.out.println("(3)- Administrar Contas");
+        System.out.println("(4)- Fazer uma transação");
         System.out.print("--> ");
         int op = sc.nextInt();
 
@@ -26,6 +28,8 @@ public class Main {
                     administrarCliente.administrarCliente();
             case 3: ContaDao administrarConta = new ContaDao();
                     administrarConta.administrarConta();
+            case 4: TransacaoDao transacaoDao = new TransacaoDao();
+                    transacaoDao.efetuarTransacao();
             default:
                 System.out.println("Opção inválida!");
         }

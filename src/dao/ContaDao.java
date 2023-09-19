@@ -3,14 +3,12 @@ package dao;
 import enums.TipoConta;
 import model.Conta;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class ContaDao {
+
     Scanner sc = new Scanner(System.in);
     ConexaoDao conexao = new ConexaoDao();
     Conta conta = new Conta();
@@ -69,6 +67,78 @@ public class ContaDao {
         }
 
         System.out.println(conta);
+    }
+
+    public double retornaSaldo(String CPF_cliente) {
+        ConexaoDao conexaoDao = new ConexaoDao();
+        ResultSet retorno = null;
+        double saldo = 0;
+
+        try {
+            Connection conexao = conexaoDao.getConnection();
+            String consulta = "SELECT saldo FROM conta WHERE CPF_cliente = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(consulta);
+            preparedStatement.setString(1, CPF_cliente);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                saldo =  retorno.getDouble("saldo");
+            } else {
+                System.out.println("Nº de conta não encontrado, informe um existe no banco de dados!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return saldo;
+    }
+
+    public int retornaNroConta(String CPF_cliente) {
+        ConexaoDao conexaoDao = new ConexaoDao();
+        ResultSet retorno = null;
+        int nro_conta = 0;
+
+        try {
+            Connection conexao = conexaoDao.getConnection();
+            String consulta = "SELECT nro_conta FROM conta WHERE CPF_cliente = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(consulta);
+            preparedStatement.setString(1, CPF_cliente);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                nro_conta =  retorno.getInt("nro_conta");
+            } else {
+                System.out.println("Nº de conta não encontrado, informe um existe no banco de dados!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return nro_conta;
+    }
+
+    public void atualizaSaldo(int nro_conta, double valor) {
+        ConexaoDao conexaoDao = new ConexaoDao();
+
+        try {
+            Connection conexao = conexaoDao.getConnection();
+            String sql = "UPDATE conta SET saldo = ? WHERE nro_conta = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+
+            preparedStatement.setDouble(1, valor);
+            preparedStatement.setInt(2, nro_conta);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Saldo atualizado com sucesso!");
+            } else {
+                System.out.println("Nº de conta não encontrado, informe um existe no banco de dados!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -6,15 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e2986602-f29d-4480-97cd-4f0d323a3b03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/001_create_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/001_create_database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/002_create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/002_create_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ClienteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ConexaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConexaoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ContaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ContaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/TransacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/TransacaoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Conta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Transacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Transacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ContaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ContaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Cliente.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
