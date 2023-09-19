@@ -29,16 +29,17 @@ public class ClienteDao {
 
     private void cadastrarCliente(){
         System.out.println("----CADASTRO DE CLIENTE----");
-        System.out.print("Número do CPF: ");
-        long cpf = sc.nextInt();
-        System.out.print("Nome completo: ");
         sc.nextLine();
+        System.out.print("Número do CPF: ");
+        String cpf = sc.nextLine();
+        System.out.print("Nome completo: ");
         String nome = sc.nextLine();
         System.out.print("Telefone: ");
-        Integer telefone = sc.nextInt();
+        String telefone = sc.nextLine();
         System.out.print("Email: ");
-        sc.nextLine();
         String email = sc.nextLine();
+
+        cpf = cpf.replaceAll("[^0-9]", "");
 
         cliente.cadastrarCliente(cpf, nome, telefone, email);
 
@@ -47,9 +48,9 @@ public class ClienteDao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setLong(1, cliente.getCpf());
+            preparedStatement.setString(1, cliente.getCpf());
             preparedStatement.setString(2, cliente.getNome());
-            preparedStatement.setInt(3, cliente.getTelefone());
+            preparedStatement.setString(3, cliente.getTelefone());
             preparedStatement.setString(4, cliente.getEmail());
 
             int rowsAffected = preparedStatement.executeUpdate();

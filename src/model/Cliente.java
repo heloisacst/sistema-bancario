@@ -1,23 +1,23 @@
 package model;
 
 public class Cliente {
-    private long cpf;
+    private String cpf;
     private String nome;
-    private Integer telefone;
+    private String telefone;
     private String email;
 
     public Cliente(){
 
     }
 
-    public Cliente(Integer cpf, String nome, Integer telefone, String email) {
+    public Cliente(String cpf, String nome, String telefone, String email) {
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
@@ -25,7 +25,7 @@ public class Cliente {
         return nome;
     }
 
-    public Integer getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
@@ -33,7 +33,7 @@ public class Cliente {
         return email;
     }
 
-    public void cadastrarCliente(long cpf, String nome, Integer telefone, String email) {
+    public void cadastrarCliente(String cpf, String nome, String telefone, String email) {
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;

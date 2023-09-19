@@ -42,7 +42,8 @@ public class ContaDao {
         Timestamp dataAberturaSql = Timestamp.valueOf(dataAbertura);
 
         System.out.print("Informar o CPF que essa conta será vinculada: ");
-        int cpf_cliente = sc.nextInt();
+        sc.nextLine();
+        String cpf_cliente = sc.nextLine();
 
         try (Connection connection = conexao.getConnection()) {
             String sql = "INSERT INTO conta (nro_conta, agencia, tipo_conta, data_abertura, saldo, CPF_cliente) VALUES (?, ?, ?, ?, ?, ?)";
@@ -54,7 +55,7 @@ public class ContaDao {
             preparedStatement.setString(3, tipoContaSql);
             preparedStatement.setTimestamp(4, dataAberturaSql);
             preparedStatement.setDouble(5, conta.getSaldo());
-            preparedStatement.setInt(6, cpf_cliente);
+            preparedStatement.setString(6, cpf_cliente);
 
             int rowsAffected = preparedStatement.executeUpdate();
 
