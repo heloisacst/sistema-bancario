@@ -23,6 +23,7 @@ public class ClienteDao {
                 break;
             default:
                 System.out.println("Opção inválida!");
+                break;
         }
 
     }

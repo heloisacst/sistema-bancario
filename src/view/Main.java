@@ -26,12 +26,16 @@ public class Main {
                     break;
             case 2: ClienteDao administrarCliente = new ClienteDao();
                     administrarCliente.administrarCliente();
+                    break;
             case 3: ContaDao administrarConta = new ContaDao();
                     administrarConta.administrarConta();
+                    break;
             case 4: TransacaoDao transacaoDao = new TransacaoDao();
                     transacaoDao.efetuarTransacao();
+                    break;
             default:
                 System.out.println("Opção inválida!");
+                break;
         }
 
         sc.close();

@@ -23,6 +23,7 @@ public class ContaDao {
                 break;
             default:
                 System.out.println("Opção inválida!");
+                break;
         }
     }
 
