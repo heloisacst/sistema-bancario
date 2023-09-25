@@ -1,5 +1,5 @@
 # Sistema Bancário
-Projeto para a matéria de banco de dados II.
+Projeto para a disciplina de banco de dados II.
 
 ## 1. 
 Na pasta `scripts`, executar os scripts na ordem que aparecem (001, 002, etc) para configuar o banco de dados.
