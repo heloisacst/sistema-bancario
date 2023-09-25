@@ -40,7 +40,15 @@ public class ClienteDao {
         System.out.print("Email: ");
         String email = sc.nextLine();
 
+<<<<<<< HEAD
         cpf = cpf.replaceAll("[^0-9]", "");
+=======
+<<<<<<< HEAD
+        cpf = cpf.replaceAll("[^0-9]", "");
+=======
+        cpf = cpf.replaceAll("[^0-9]", ""); //retira caracteres invalidos
+>>>>>>> cb5e729 (nova feature - login)
+>>>>>>> 1a40567 (nova feature - login)
 
         cliente.cadastrarCliente(cpf, nome, telefone, email);
 

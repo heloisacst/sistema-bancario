@@ -30,3 +30,19 @@ create table transacao (cod_transacao int auto_increment,
                         primary key(cod_transacao),
                         foreign key(nro_conta_origem) references conta(nro_conta)
 );
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+create table usuario (login varchar(20), 
+                      senha varchar(20),
+                      cpf_usuario varchar(11),
+                      tipo_usuario varchar(15),
+                      primary key(login, cpf_usuario),
+                      foreign key(cpf_usuario) references cliente(CPF)
+                      /*fazer campo cpf pro gerente*/
+);                      
+                      
+>>>>>>> cb5e729 (nova feature - login)
+>>>>>>> 1a40567 (nova feature - login)
