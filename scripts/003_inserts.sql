@@ -1,0 +1,1 @@
+insert into usuario values ('admin', 'admin', 123456, 'GERENTE');

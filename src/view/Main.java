@@ -7,70 +7,91 @@ import dao.TransacaoDao;
 import dao.*;
 import enums.TipoUsuario;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         UsuarioDao usuarioDao = new UsuarioDao();
         String retorno = null;
 
-        System.out.println("-----SISTEMA BANCÁRIO-----");
-        do {
-            System.out.println("Faça o seu login:");
-            System.out.print("Usuário: ");
-            String user = sc.nextLine();
-            System.out.print("Senha: ");
-            String senha = sc.nextLine();
+        System.out.println("---------SISTEMA BANCÁRIO----------");
+        System.out.println("(1) Fazer login");
+        System.out.println("(2) Cadastrar novo usuário");
+        System.out.print("--> ");
+        int op = sc.nextInt();
+        sc.nextLine();
 
-            retorno = usuarioDao.validaUsuario(user, senha);
+        switch (op) {
+            case 1:
+                do {
+                    System.out.print("Usuário: ");
+                    String user = sc.nextLine();
+                    System.out.print("Senha: ");
+                    String senha = sc.nextLine();
 
-        } while(retorno == null);
+                    retorno = usuarioDao.validaUsuario(user, senha);
 
-        TipoUsuario tipoUsuario = TipoUsuario.GERENTE;
-        String tipoUsuarioStr = tipoUsuario.name();
+                } while (retorno == null);
 
-        if (retorno.equals(tipoUsuarioStr)) {
-            System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
-            System.out.println("(1)- Administrar Gerentes");
-            System.out.println("(2)- Administrar Clientes");
-            System.out.println("(3)- Administrar Contas");
-            System.out.print("--> ");
-            int op = sc.nextInt();
+                TipoUsuario tipoUsuario = TipoUsuario.GERENTE;
+                String tipoUsuarioStr = tipoUsuario.name();
 
-            switch (op) {
-                case 1:
-                    GerenteDao administrarGerente = new GerenteDao();
-                    administrarGerente.administrarGerente();
-                    break;
-                case 2:
-                    ClienteDao administrarCliente = new ClienteDao();
-                    administrarCliente.administrarCliente();
-                    break;
-                case 3:
-                    ContaDao administrarConta = new ContaDao();
-                    administrarConta.administrarConta();
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
-            }
-        } else {
-            System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
-            System.out.println("(1)- Fazer uma transação");
-            System.out.print("--> ");
-            int op = sc.nextInt();
+                if (retorno.equals(tipoUsuarioStr)) {
+                    System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
+                    System.out.println("(1)- Administrar Gerentes");
+                    System.out.println("(2)- Administrar Clientes");
+                    System.out.println("(3)- Administrar Contas");
+                    System.out.println("(4)- Administrar Usuários");
+                    System.out.print("--> ");
+                    int op1 = sc.nextInt();
 
-            switch (op) {
-                case 1:
-                    TransacaoDao transacaoDao = new TransacaoDao();
-                    transacaoDao.efetuarTransacao();
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
-            }
+                    switch (op1) {
+                        case 1:
+                            GerenteDao administrarGerente = new GerenteDao();
+                            administrarGerente.administrarGerente();
+                            break;
+                        case 2:
+                            ClienteDao administrarCliente = new ClienteDao();
+                            administrarCliente.administrarCliente();
+                            break;
+                        case 3:
+                            ContaDao administrarConta = new ContaDao();
+                            administrarConta.administrarConta();
+                            break;
+                        case 4:
+                            usuarioDao.administrarUsuario();
+                            break;
+                        default:
+                            System.out.println("Opção inválida!");
+                            break;
+                    }
+                } else {
+                    System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
+                    System.out.println("(1)- Fazer uma transação");
+                    System.out.print("--> ");
+                    int op1 = sc.nextInt();
 
-            sc.close();
+                    switch (op1) {
+                        case 1:
+                            TransacaoDao transacaoDao = new TransacaoDao();
+                            transacaoDao.efetuarTransacao();
+                            break;
+                        default:
+                            System.out.println("Opção inválida!");
+                            break;
+                    }
 
+                    sc.close();
+
+                }
+                break;
+
+            case 2: usuarioDao.cadastrarUsuario();
+                break;
+
+            default:
+                System.out.println("Opção inválida");
+                break;
         }
 
     }

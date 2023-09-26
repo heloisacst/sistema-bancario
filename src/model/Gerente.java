@@ -4,11 +4,13 @@ public class Gerente {
     private Integer matricula;
     private String nome_gerente;
 
+    private String cpf;
+
     public Gerente() {
 
     }
 
-    public Gerente(Integer matricula, String nome_gerente) {
+    public Gerente(Integer matricula, String nome_gerente, String cpf) {
         this.matricula = matricula;
         this.nome_gerente = nome_gerente;
     }
@@ -21,9 +23,14 @@ public class Gerente {
         return nome_gerente;
     }
 
-    public void cadastrarGerente(Integer matricula, String nome_gerente) {
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void cadastrarGerente(Integer matricula, String nome_gerente, String cpf) {
         this.matricula = matricula;
         this.nome_gerente = nome_gerente;
+        this.cpf = cpf;
     }
 
     public String toString() {

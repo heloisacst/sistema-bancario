@@ -6,16 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e2986602-f29d-4480-97cd-4f0d323a3b03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/002_create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/002_create_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ClienteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ContaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ContaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/GerenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/GerenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/TransacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/TransacaoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/TipoTransacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/TipoTransacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Gerente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ContaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ContaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/TransacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/TransacaoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/TipoTransacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enums/TipoTransacao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,13 +52,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Unimed SC/Desktop/novo/sistema-bancario&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Unimed SC/Desktop/novo/sistema-bancario",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="enums" />

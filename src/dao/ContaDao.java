@@ -8,22 +8,28 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class ContaDao {
-
     Scanner sc = new Scanner(System.in);
     ConexaoDao conexao = new ConexaoDao();
     Conta conta = new Conta();
     ResultSet retorno = null;
+
     public void administrarConta(){
         System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
-        System.out.println("(1) Cadastrar uma conta");
-        System.out.println("(2) Excluir conta");
+        System.out.println("(1) Consultar conta");
+        System.out.println("(2) Cadastrar conta");
+        System.out.println("(3) Atualizar conta");
+        System.out.println("(4) Excluir conta");
         System.out.print("---> ");
         int op = sc.nextInt();
 
         switch (op) {
-            case 1: cadastrarConta();
+            case 1: consultarConta();
                 break;
-            case 2: excluirConta();
+            case 2: cadastrarConta();
+                break;
+            case 3: atualizarConta();
+                break;
+            case 4: excluirConta();
                 break;
             default:
                 System.out.println("Opção inválida!");
@@ -72,6 +78,72 @@ public class ContaDao {
         }
 
         System.out.println(conta);
+    }
+
+    private void atualizarConta() {
+        System.out.println("Informe o nº da conta que deseja atualizar");
+        int conta = sc.nextInt();
+
+        try (Connection connection = conexao.getConnection()) {
+            String sql = "SELECT * FROM conta WHERE nro_conta = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, conta);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                System.out.print("Novo nº de conta: ");
+                int newConta = sc.nextInt();
+                System.out.println("Novo tipo de conta [POUPANÇA, CONTA_CORRENTE CONTA_SALARIO]");
+                TipoConta tipoConta = TipoConta.valueOf(sc.next());
+                String newTipoConta = tipoConta.toString();
+
+                String update = "UPDATE conta SET nro_conta = ?, tipo_conta = ? WHERE nro_conta = ?";
+                preparedStatement = connection.prepareStatement(update);
+                preparedStatement.setInt(1, newConta);
+                preparedStatement.setString(2, newTipoConta);
+                preparedStatement.setInt(3, conta);
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if(rowsAffected > 0){
+                    System.out.println("Conta atualizada com sucesso!");
+                } else {
+                    System.out.println("Falha ao atualizar conta!");
+                }
+            } else {
+                System.out.println("Falha ao localizar a conta.");
+                atualizarConta();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void consultarConta() {
+        System.out.println("Informe o nº da conta que deseja consultar");
+        int conta = sc.nextInt();
+
+        try (Connection connection = conexao.getConnection()) {
+            String sql = "SELECT nro_conta, agencia, tipo_conta, data_abertura, saldo, CPF_cliente FROM conta WHERE nro_conta = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, conta);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                int agencia = retorno.getInt("agencia");
+                String tipoConta = retorno.getString("tipo_conta");
+                String dataAbertura = retorno.getString("data_abertura");
+                double saldo  = retorno.getDouble("saldo");
+                String cpfCliente = retorno.getString("CPF_cliente");
+
+                System.out.println("| " + conta + " | " + agencia + " | " + tipoConta + " | " + dataAbertura + " | " + saldo + " | " + cpfCliente + " |");
+
+            } else {
+                System.out.println("Falha ao localizar a conta.");
+                consultarConta();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private void excluirConta(){
