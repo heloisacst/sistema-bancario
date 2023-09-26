@@ -2,7 +2,7 @@
 create table gerente(matricula int not null,
 					 nome_gerente varchar(250),
                      cpf_gerente varchar(11),
-                     primary key(matricula)
+                     primary key(cpf_gerente)
 );
 
 CREATE TABLE cliente(CPF varchar(11) NOT NULL,
@@ -28,15 +28,12 @@ create table transacao (cod_transacao int auto_increment,
                         tipo_transacao varchar(20),
                         nro_conta_origem int,
                         nro_conta_destino int,
-                        primary key(cod_transacao),
-                        foreign key(nro_conta_origem) references conta(nro_conta)
+                        primary key(cod_transacao)
 );
 
 create table usuario (login varchar(20), 
                       senha varchar(20),
                       cpf_usuario varchar(11),
                       tipo_usuario varchar(15),
-                      primary key(login, cpf_usuario),
-                      foreign key(cpf_usuario) references cliente(CPF),
-                      foreign key(cpf_usuario) references gerente(cpf_gerente)
+                      primary key(login, cpf_usuario)
 );
