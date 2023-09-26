@@ -12,14 +12,18 @@ public class ContaDao {
     Scanner sc = new Scanner(System.in);
     ConexaoDao conexao = new ConexaoDao();
     Conta conta = new Conta();
+    ResultSet retorno = null;
     public void administrarConta(){
         System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
-        System.out.println("(1) Cadastrar uma Conta");
+        System.out.println("(1) Cadastrar uma conta");
+        System.out.println("(2) Excluir conta");
         System.out.print("---> ");
         int op = sc.nextInt();
 
         switch (op) {
             case 1: cadastrarConta();
+                break;
+            case 2: excluirConta();
                 break;
             default:
                 System.out.println("Opção inválida!");
@@ -68,6 +72,36 @@ public class ContaDao {
         }
 
         System.out.println(conta);
+    }
+
+    private void excluirConta(){
+        System.out.println("Informe o nº da conta que deseja excluir");
+        int conta = sc.nextInt();
+
+        try (Connection connection = conexao.getConnection()) {
+            String sql = "SELECT * FROM conta WHERE nro_conta = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, conta);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                String delete = "DELETE FROM conta WHERE nro_conta = ?";
+                preparedStatement = connection.prepareStatement(delete);
+                preparedStatement.setInt(1, conta);
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if(rowsAffected > 0){
+                    System.out.println("Conta excluída com sucesso!");
+                } else {
+                    System.out.println("Falha ao excluir conta!");
+                }
+            } else {
+                System.out.println("Falha ao localizar a conta.");
+                excluirConta();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public double retornaSaldo(String CPF_cliente) {

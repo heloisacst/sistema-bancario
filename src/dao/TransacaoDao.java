@@ -14,15 +14,7 @@ public class TransacaoDao {
     ContaDao contaDao = new ContaDao();
 
     public void efetuarTransacao() {
-<<<<<<< HEAD
-        System.out.println("Informe qual operação será realizada | [DEPOSITO, SAQUE, ENVIAR]");
-=======
-<<<<<<< HEAD
-        System.out.println("Informe qual operação será realizada | [DEPOSITO, SAQUE, ENVIAR]");
-=======
         System.out.println("Informe qual operação será realizada | [DEPOSITO, SAQUE, TRANSFERENCIA]");
->>>>>>> cb5e729 (nova feature - login)
->>>>>>> 1a40567 (nova feature - login)
         System.out.print("--> ");
         TipoTransacao tipoTransacao = TipoTransacao.valueOf(sc.next());
         System.out.println("Informe o seu CPF: ");

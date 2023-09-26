@@ -4,6 +4,7 @@ import model.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -11,15 +12,19 @@ public class ClienteDao {
     Scanner sc = new Scanner(System.in);
     ConexaoDao conexao = new ConexaoDao();
     Cliente cliente = new Cliente();
+    ResultSet retorno = null;
 
     public void administrarCliente(){
         System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
-        System.out.println("(1) Cadastrar um Cliente");
+        System.out.println("(1) Cadastrar um cliente");
+        System.out.println("(2) Excluir um cliente");
         System.out.print("---> ");
         int op = sc.nextInt();
 
         switch (op) {
             case 1: cadastrarCliente();
+                break;
+            case 2: excluirCliente();
                 break;
             default:
                 System.out.println("Opção inválida!");
@@ -40,15 +45,7 @@ public class ClienteDao {
         System.out.print("Email: ");
         String email = sc.nextLine();
 
-<<<<<<< HEAD
         cpf = cpf.replaceAll("[^0-9]", "");
-=======
-<<<<<<< HEAD
-        cpf = cpf.replaceAll("[^0-9]", "");
-=======
-        cpf = cpf.replaceAll("[^0-9]", ""); //retira caracteres invalidos
->>>>>>> cb5e729 (nova feature - login)
->>>>>>> 1a40567 (nova feature - login)
 
         cliente.cadastrarCliente(cpf, nome, telefone, email);
 
@@ -73,6 +70,39 @@ public class ClienteDao {
             e.printStackTrace();
         }
 
-        System.out.println(cliente);
     }
+
+    private void excluirCliente(){
+
+        System.out.println("Informe o CPF do cliente que deseja excluir");
+        sc.nextLine();
+        String cpf = sc.nextLine();
+
+        try (Connection connection = conexao.getConnection()) {
+            String sql = "SELECT * FROM cliente WHERE CPF = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, cpf);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                String delete = "DELETE FROM cliente WHERE CPF = ?";
+                preparedStatement = connection.prepareStatement(delete);
+                preparedStatement.setString(1, cpf);
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if(rowsAffected > 0){
+                    System.out.println("Cliente excluído com sucesso!");
+                } else {
+                    System.out.println("Falha ao excluir cliente!");
+                }
+            } else {
+                System.out.println("Falha ao localizar o cliente.");
+                excluirCliente();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
