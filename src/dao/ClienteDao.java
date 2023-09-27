@@ -215,15 +215,6 @@ public class ClienteDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (retornoCliente != null && retornoGerente != null) {
-                try {
-                    retornoCliente.close();
-                    retornoGerente.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
 
         return tipoUsuario;

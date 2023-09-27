@@ -35,12 +35,13 @@ public class UsuarioDao {
         String tipoUsuarioStr;
         String cpf = null;
         System.out.println("----CADASTRO DE USUÁRIO----");
-        do {
-            System.out.println("Informe o CPF no qual será vinculado esse usuário");
-            sc.nextLine();
-            cpf = sc.nextLine();
-            tipoUsuarioStr = clienteDao.retornaTipoUsuario(cpf);
-        } while (tipoUsuarioStr == null);
+        System.out.println("Informe o CPF no qual será vinculado esse usuário");
+        cpf = sc.nextLine();
+        tipoUsuarioStr = clienteDao.retornaTipoUsuario(cpf);
+
+        if(tipoUsuarioStr == null){
+            System.exit(0);
+        }
 
         System.out.print("Informe o login desejado: ");
         String login = sc.nextLine();
@@ -68,6 +69,14 @@ public class UsuarioDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (retorno != null) {
+                try {
+                    retorno.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
