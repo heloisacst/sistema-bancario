@@ -61,7 +61,7 @@ public class RelatoriosDao {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             retorno = preparedStatement.executeQuery();
 
-            System.out.println("Relatório de Transações:");
+            System.out.println("Relatório de Contas por cliente:");
             System.out.printf("%-15s %-15s %-20s %-20s\n", "CPF", "Nro Conta", "Tipo Conta", "Cliente");
             System.out.println("---------------------------------------------------------------------");
 
