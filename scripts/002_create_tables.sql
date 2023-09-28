@@ -35,5 +35,5 @@ create table usuario (login varchar(20),
                       senha varchar(20),
                       cpf_usuario varchar(11),
                       tipo_usuario varchar(15),
-                      primary key(login, cpf_usuario)
+                      primary key(cpf_usuario)
 );
