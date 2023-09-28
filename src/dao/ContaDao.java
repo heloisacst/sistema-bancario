@@ -176,6 +176,39 @@ public class ContaDao {
         }
     }
 
+    public void extrato(String login) {
+        UsuarioDao usuarioDao = new UsuarioDao();
+        String cpfConta = usuarioDao.retornaCpfUser(login);
+
+        try {
+            Connection connection = conexao.getConnection();
+            String sql = "SELECT cc.nome, c.nro_conta conta_origem, c.agencia, t.tipo_transacao, t.data_hora, t.valor_transacao, t.nro_conta_destino destinatario FROM transacao t, conta c, cliente cc where c.nro_conta = t.nro_conta_origem and c.CPF_cliente = cc.CPF and c.CPF_cliente = ? order by t.data_hora desc;\n";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, cpfConta);
+            retorno = preparedStatement.executeQuery();
+
+            System.out.println("Extrato de Transações:");
+            System.out.printf("%-20s %-15s %-10s %-15s %-20s %-15s %-15s\n", "Nome", "Nro Conta", "Agência", "Tipo Transação", "Data e Hora", "Valor Transação", "Destinatário");
+            System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+            while (retorno.next()) {
+                String nome = retorno.getString("nome");
+                int nroConta = retorno.getInt("conta_origem");
+                String agencia = retorno.getString("agencia");
+                String tipoTransacao = retorno.getString("tipo_transacao");
+                String dataHora = retorno.getString("data_hora");
+                double valorTransacao = retorno.getDouble("valor_transacao");
+                int nroContaDestino = retorno.getInt("destinatario");
+
+                System.out.printf("%-20s %-15d %-10s %-15s %-20s %-15.2f %-15d\n", nome, nroConta, agencia, tipoTransacao, dataHora, valorTransacao, nroContaDestino);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public double retornaSaldo(String CPF_cliente) {
         ConexaoDao conexaoDao = new ConexaoDao();
         ResultSet retorno = null;

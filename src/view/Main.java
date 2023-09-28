@@ -13,6 +13,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         UsuarioDao usuarioDao = new UsuarioDao();
         String retorno = null;
+        String user = null;
 
         System.out.println("---------SISTEMA BANCÁRIO----------");
         System.out.println("(1) Fazer login");
@@ -25,7 +26,7 @@ public class Main {
             case 1:
                 do {
                     System.out.print("Usuário: ");
-                    String user = sc.nextLine();
+                    user = sc.nextLine();
                     System.out.print("Senha: ");
                     String senha = sc.nextLine();
 
@@ -69,7 +70,8 @@ public class Main {
                                 case 4:
                                     usuarioDao.administrarUsuario();
                                     break;
-                                case 5: RelatoriosDao relatoriosDao = new RelatoriosDao();
+                                case 5:
+                                        RelatoriosDao relatoriosDao = new RelatoriosDao();
                                         relatoriosDao.gerarRelatorios();
                                 case 0: System.out.println("Saindo do Sistema...");
                                         break;
@@ -83,12 +85,12 @@ public class Main {
                     System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
                     System.out.println("(1)- Fazer uma transação");
                     System.out.println("(2)- Consultar Saldo");
+                    System.out.println("(3) - Extrato da Conta");
                     System.out.print("--> ");
                     int op1 = sc.nextInt();
 
                     switch (op1) {
                         case 1:
-
                             TransacaoDao transacaoDao = new TransacaoDao();
                             transacaoDao.efetuarTransacao();
                             break;
@@ -98,7 +100,11 @@ public class Main {
                             System.out.print("--> ");
                             String cpf = sc.nextLine();
                             Double saldo = new ContaDao().retornaSaldo(cpf);
-                            System.out.print("Saldo: " + saldo);
+                            System.out.print("Saldo: R$ " + saldo);
+                            break;
+                        case 3:
+                            ContaDao contaDao = new ContaDao();
+                            contaDao.extrato(user);
                             break;
                         default:
                             System.out.println("Opção inválida!");

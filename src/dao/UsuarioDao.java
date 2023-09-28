@@ -116,4 +116,25 @@ public class UsuarioDao {
         return tipoUsuario;
     }
 
+    public String retornaCpfUser(String login){
+        String cpf = null;
+        try {
+            Connection connection = conexao.getConnection();
+            String sql = "SELECT cpf_usuario FROM usuario WHERE login = ?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, login);
+            retorno = preparedStatement.executeQuery();
+
+            if (retorno.next()) {
+                cpf = retorno.getString("cpf_usuario");
+            } else {
+                System.out.println("Usuário ou senha incorreta.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return cpf;
+    }
+
 }
