@@ -11,12 +11,11 @@ public class ConexaoDao {
         public ConexaoDao() {
 
             String user = "root"; //"postgres";
-            String senha = "dev123"; //"udesc";
+            String senha = "root"; //"udesc";
             String url = "jdbc:mysql://localhost:3306/banking"; //jdbc:postgresql://localhost:5432/clinica";
 
             try {
                 con = DriverManager.getConnection(url, user, senha);
-                System.out.println("Conexão bem-sucedida!");
             } catch (SQLException e) {
                 System.err.println("Erro na conexão: " + e.getMessage());
                 throw new RuntimeException("Erro na conexão com o banco de dados", e);

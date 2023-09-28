@@ -1,2 +1,2 @@
---CRIA O BANCO DE DADOS
+/*CRIA O BANCO DE DADOS*/
 create database banking;
