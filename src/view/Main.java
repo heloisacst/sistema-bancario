@@ -73,7 +73,7 @@ public class Main {
                                 case 5:
                                         RelatoriosDao relatoriosDao = new RelatoriosDao();
                                         relatoriosDao.gerarRelatorios();
-                                case 0: System.out.println("Saindo do Sistema...");
+                                case 0: System.out.println("\nSaindo do Sistema...\n");
                                         break;
                                 default:
                                     System.out.println("Opção inválida!");
@@ -85,7 +85,7 @@ public class Main {
                     System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
                     System.out.println("(1)- Fazer uma transação");
                     System.out.println("(2)- Consultar Saldo");
-                    System.out.println("(3) - Extrato da Conta");
+                    System.out.println("(3)- Extrato da Conta");
                     System.out.print("--> ");
                     int op1 = sc.nextInt();
 

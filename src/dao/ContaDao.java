@@ -189,7 +189,7 @@ public class ContaDao {
             retorno = preparedStatement.executeQuery();
 
             System.out.println("Extrato de Transações:");
-            System.out.printf("%-20s %-15s %-10s %-15s %-20s %-15s %-15s\n", "Nome", "Nro Conta", "Agência", "Tipo Transação", "Data e Hora", "Valor Transação", "Destinatário");
+            System.out.printf("%-20s %-15s %-10s %-17s %-22s %-17s %-15s\n", "Nome", "Nro Conta", "Agência", "Tipo Transação", "Data e Hora", "Valor Transação", "Destinatário");
             System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 
             while (retorno.next()) {
@@ -201,7 +201,7 @@ public class ContaDao {
                 double valorTransacao = retorno.getDouble("valor_transacao");
                 int nroContaDestino = retorno.getInt("destinatario");
 
-                System.out.printf("%-20s %-15d %-10s %-15s %-20s %-15.2f %-15d\n", nome, nroConta, agencia, tipoTransacao, dataHora, valorTransacao, nroContaDestino);
+                System.out.printf("%-20s %-15d %-10s %-17s %-22s %-17.2f %-15d\n", nome, nroConta, agencia, tipoTransacao, dataHora, valorTransacao, nroContaDestino);
             }
 
         } catch (SQLException e) {
