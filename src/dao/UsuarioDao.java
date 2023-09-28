@@ -32,10 +32,11 @@ public class UsuarioDao {
     }
 
     public void cadastrarUsuario() {
+
         String tipoUsuarioStr;
         String cpf = null;
         System.out.println("----CADASTRO DE USUÁRIO----");
-        System.out.println("Informe o CPF no qual será vinculado esse usuário");
+        System.out.println("Informe o CPF: ");
         cpf = sc.nextLine();
         tipoUsuarioStr = clienteDao.retornaTipoUsuario(cpf);
 

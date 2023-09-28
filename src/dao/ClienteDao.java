@@ -15,7 +15,8 @@ public class ClienteDao {
     ResultSet retorno = null;
 
     public void administrarCliente(){
-        System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
+        System.out.println("***************************************************************");
+        System.out.println("\nO que deseja fazer? (Digite o número da opção desejada)");
         System.out.println("(1) Consultar cliente");
         System.out.println("(2) Cadastrar um cliente");
         System.out.println("(3) Atualizar dados de cliente");
@@ -127,6 +128,7 @@ public class ClienteDao {
     }
 
     public void consultarCliente() {
+        sc.nextLine();
         String nome = null;
         String telefone = null;
         String email = null;

@@ -31,6 +31,17 @@ INSERT INTO conta (nro_conta, agencia, tipo_conta, data_abertura, saldo, CPF_cli
 INSERT INTO conta (nro_conta, agencia, tipo_conta, data_abertura, saldo, CPF_cliente) VALUES (90123, '0001', 'CONTA_SALARIO', '2023-09-27 16:00:00', 1200.50, '99992949999');
 INSERT INTO conta (nro_conta, agencia, tipo_conta, data_abertura, saldo, CPF_cliente) VALUES (01234, '0001', 'CONTA_CORRENTE', '2023-09-27 16:30:00', 800.75, '10000567890');
 
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (20, '2023-03-15 08:45:00', 500.00, 'TRANSFERENCIA', 12345, 52893);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (21, '2023-04-20 14:30:00', 1000.50, 'DEPOSITO', 23456, NULL);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (22, '2023-05-10 11:15:00', 200.75, 'SAQUE', 34567, NULL);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (23, '2023-06-05 09:00:00', 1500.00, 'TRANSFERENCIA', 56789, 67890);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (24, '2023-07-12 16:45:00', 3000.50, 'DEPOSITO', 67890, NULL);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (25, '2023-08-25 13:20:00', 200.25, 'SAQUE', 78901, NULL);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (26, '2023-09-08 10:10:00', 7500.00, 'TRANSFERENCIA', 89012, 90123);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (27, '2023-10-15 18:30:00', 1200.50, 'DEPOSITO', 90123, NULL);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (28, '2023-11-02 07:55:00', 800.75, 'SAQUE', 01234, NULL);
+INSERT INTO transacao (cod_transacao, data_hora, valor_transacao, tipo_transacao, nro_conta_origem, nro_conta_destino) VALUES (29, '2023-12-20 12:00:00', 400.00, 'TRANSFERENCIA', 12345, 58974);
+
 INSERT INTO usuario VALUES ('admin', 'admin', 12345678901, 'GERENTE');
 INSERT INTO usuario VALUES ('cliente', 'cliente', '48592738465', 'CLIENTE');
 

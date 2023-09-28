@@ -14,7 +14,8 @@ public class GerenteDao {
     ResultSet retorno = null;
 
     public void administrarGerente(){
-        System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
+        System.out.println("***************************************************************");
+        System.out.println("\nO que deseja fazer? (Digite o número da opção desejada)");
         System.out.println("(1) Consultar gerente");
         System.out.println("(2) Cadastrar um gerente");
         System.out.println("(3) Atualizar dados do gerente");

@@ -6,29 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="e2986602-f29d-4480-97cd-4f0d323a3b03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/003_inserts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/003_inserts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ClienteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ConexaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConexaoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/TransacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/TransacaoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ContaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ContaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/GerenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/GerenteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/TipoTransacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/TipoTransacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ConexaoDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/TransacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/TransacaoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/TipoTransacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enums/TipoTransacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Conta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Conta.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Transacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Transacao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Main.class" afterDir="false" />
->>>>>>> 2a200b8ec76991461de831c8961f92d96e20eea1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +46,10 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
   <component name="ProjectId" id="2VDQBJYxWa11kCIlHHMMzxbW4pD" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -80,35 +71,6 @@
       <recent name="enums" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="demo" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="cmdOptions" />
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list />
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,9 +81,5 @@
       <updated>1694368033849</updated>
     </task>
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="executable:docker" />
-    <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
 </project>

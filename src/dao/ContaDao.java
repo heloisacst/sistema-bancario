@@ -14,7 +14,8 @@ public class ContaDao {
     ResultSet retorno = null;
 
     public void administrarConta(){
-        System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
+        System.out.println("***************************************************************");
+        System.out.println("\nO que deseja fazer? (Digite o número da opção desejada)");
         System.out.println("(1) Consultar conta");
         System.out.println("(2) Cadastrar conta");
         System.out.println("(3) Atualizar conta");
@@ -43,7 +44,7 @@ public class ContaDao {
         Integer nro_conta = sc.nextInt();
         System.out.print("Tipo da Conta: ");
         sc.nextLine();
-        TipoConta tipoConta = TipoConta.valueOf(sc.next());
+        TipoConta tipoConta = TipoConta.valueOf(sc.nextLine().replaceAll("\\s+", "_").toUpperCase());
         LocalDateTime dataAbertura = LocalDateTime.now();
 
         conta.cadastrarConta(nro_conta, 0001, tipoConta, dataAbertura, 0.0);
@@ -51,7 +52,6 @@ public class ContaDao {
         Timestamp dataAberturaSql = Timestamp.valueOf(dataAbertura);
 
         System.out.print("Informar o CPF que essa conta será vinculada: ");
-        sc.nextLine();
         String cpf_cliente = sc.nextLine();
 
         try (Connection connection = conexao.getConnection()) {
@@ -94,7 +94,7 @@ public class ContaDao {
                 System.out.print("Novo nº de conta: ");
                 int newConta = sc.nextInt();
                 System.out.println("Novo tipo de conta [POUPANÇA, CONTA_CORRENTE CONTA_SALARIO]");
-                TipoConta tipoConta = TipoConta.valueOf(sc.next());
+                TipoConta tipoConta = TipoConta.valueOf(sc.next().replaceAll("\\s+", "_").toUpperCase());
                 String newTipoConta = tipoConta.toString();
 
                 String update = "UPDATE conta SET nro_conta = ?, tipo_conta = ? WHERE nro_conta = ?";

@@ -11,7 +11,7 @@ public class ConexaoDao {
         public ConexaoDao() {
 
             String user = "root"; //"postgres";
-            String senha = "root"; //"udesc";
+            String senha = "dev123"; //"udesc";
             String url = "jdbc:mysql://localhost:3306/banking"; //jdbc:postgresql://localhost:5432/clinica";
 
             try {
