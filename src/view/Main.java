@@ -37,44 +37,67 @@ public class Main {
                 String tipoUsuarioStr = tipoUsuario.name();
 
                 if (retorno.equals(tipoUsuarioStr)) {
-                    System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
-                    System.out.println("(1)- Administrar Gerentes");
-                    System.out.println("(2)- Administrar Clientes");
-                    System.out.println("(3)- Administrar Contas");
-                    System.out.println("(4)- Administrar Usuários");
-                    System.out.print("--> ");
-                    int op1 = sc.nextInt();
 
-                    switch (op1) {
-                        case 1:
-                            GerenteDao administrarGerente = new GerenteDao();
-                            administrarGerente.administrarGerente();
-                            break;
-                        case 2:
-                            ClienteDao administrarCliente = new ClienteDao();
-                            administrarCliente.administrarCliente();
-                            break;
-                        case 3:
-                            ContaDao administrarConta = new ContaDao();
-                            administrarConta.administrarConta();
-                            break;
-                        case 4:
-                            usuarioDao.administrarUsuario();
-                            break;
-                        default:
-                            System.out.println("Opção inválida!");
-                            break;
-                    }
+                    int op1;
+
+                    do {
+                        System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
+                        System.out.println("(1)- Administrar Gerentes");
+                        System.out.println("(2)- Administrar Clientes");
+                        System.out.println("(3)- Administrar Contas");
+                        System.out.println("(4)- Administrar Usuários");
+                        System.out.println("(0)- Sair sistema");
+
+                        System.out.print("--> ");
+                        op1 = sc.nextInt();
+
+
+                            switch (op1) {
+                                case 1:
+                                    GerenteDao administrarGerente = new GerenteDao();
+                                    administrarGerente.administrarGerente();
+                                    break;
+                                case 2:
+                                    ClienteDao administrarCliente = new ClienteDao();
+                                    administrarCliente.administrarCliente();
+                                    break;
+                                case 3:
+                                    ContaDao administrarConta = new ContaDao();
+                                    administrarConta.administrarConta();
+                                    break;
+                                case 4:
+                                    usuarioDao.administrarUsuario();
+                                    break;
+
+                                case 0:
+                                    System.out.println("Saindo do Sistema...");
+                                    break;
+                                default:
+                                    System.out.println("Opção inválida!");
+                                    break;
+                            }
+                    }while( op1 != 0);
+
                 } else {
                     System.out.println("O que deseja fazer? (Digite o número da opção desejada)");
                     System.out.println("(1)- Fazer uma transação");
+                    System.out.println("(2)- Consultar Saldo");
                     System.out.print("--> ");
                     int op1 = sc.nextInt();
 
                     switch (op1) {
                         case 1:
+
                             TransacaoDao transacaoDao = new TransacaoDao();
                             transacaoDao.efetuarTransacao();
+                            break;
+                        case 2:
+                            sc.nextLine();
+                            System.out.println("Digite seu cpf: ");
+                            System.out.print("--> ");
+                            String cpf = sc.nextLine();
+                            Double saldo = new ContaDao().retornaSaldo(cpf);
+                            System.out.print("Saldo: " + saldo);
                             break;
                         default:
                             System.out.println("Opção inválida!");

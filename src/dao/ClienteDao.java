@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class ClienteDao {
     Scanner sc = new Scanner(System.in);
     ConexaoDao conexao = new ConexaoDao();
-    Cliente cliente = new Cliente();
+    public Cliente cliente = new Cliente();
     ResultSet retorno = null;
 
     public void administrarCliente(){
@@ -126,13 +126,12 @@ public class ClienteDao {
         }
     }
 
-    private void consultarCliente() {
+    public void consultarCliente() {
         String nome = null;
         String telefone = null;
         String email = null;
 
         System.out.println("Informe o CPF do cliente que deseja consultar");
-        sc.nextLine();
         String cpf = sc.nextLine();
 
         try (Connection connection = conexao.getConnection()) {

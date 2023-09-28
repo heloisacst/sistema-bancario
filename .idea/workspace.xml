@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2986602-f29d-4480-97cd-4f0d323a3b03" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/ClienteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ConexaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConexaoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/TransacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/TransacaoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/TipoTransacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/TipoTransacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ClienteDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ConexaoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/TransacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/TransacaoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UsuarioDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/enums/TipoTransacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enums/TipoTransacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Conta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Conta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Transacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Transacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +48,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>

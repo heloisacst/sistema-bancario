@@ -16,9 +16,10 @@ public class TransacaoDao {
     public void efetuarTransacao() {
         System.out.println("Informe qual operação será realizada | [DEPOSITO, SAQUE, TRANSFERENCIA]");
         System.out.print("--> ");
-        TipoTransacao tipoTransacao = TipoTransacao.valueOf(sc.next());
-        System.out.println("Informe o seu CPF: ");
+        String operacao = sc.next().toUpperCase();
+        TipoTransacao tipoTransacao = TipoTransacao.valueOf(operacao);
         sc.nextLine();
+        System.out.println("Informe o seu CPF: ");
         String cpf = sc.nextLine();
         int contaTransacao = contaDao.retornaNroConta(cpf);
         LocalDateTime dth_transacao = LocalDateTime.now();
@@ -58,7 +59,7 @@ public class TransacaoDao {
             efetivaTransacao(dth_transacaoSql, tipoTransacaoSql, contaTransacao, 0);
             contaDao.atualizaSaldo(contaTransacao, saldoAtual);
 
-        } else{
+        } else if(tipoTransacao == TipoTransacao.TRANSFERENCIA){
             System.out.println("Informe qual conta receberá a operação de " + tipoTransacao);
             int conta_recebimento = sc.nextInt();
             double valorEnvio = 0;

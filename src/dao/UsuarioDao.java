@@ -13,7 +13,7 @@ public class UsuarioDao {
     Scanner sc = new Scanner(System.in);
     ConexaoDao conexao = new ConexaoDao();
     Usuario usuario = new Usuario();
-    ClienteDao clienteDao = new ClienteDao();
+    public ClienteDao clienteDao = new ClienteDao();
     ResultSet retorno = null;
 
     public void administrarUsuario() {
@@ -40,6 +40,7 @@ public class UsuarioDao {
         tipoUsuarioStr = clienteDao.retornaTipoUsuario(cpf);
 
         if(tipoUsuarioStr == null){
+            System.out.println("Usuário não é cliente");
             System.exit(0);
         }
 
